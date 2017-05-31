@@ -26,15 +26,15 @@ public class SignupActivity extends AppCompatActivity {
     RequestParams params;
     String emailPattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     public void onRadioButtonClicked(View view) {
-        boolean checked=((RadioButton) view).isChecked();
+       // boolean checked=((RadioButton) view).isChecked();
         switch(view.getId()) {
             case R.id.radioButtonSignupFemale:
               gen="Female";
-               // Toast.makeText(SignupActivity.this,gen,Toast.LENGTH_SHORT).show();
+               Toast.makeText(SignupActivity.this,gen,Toast.LENGTH_SHORT).show();
                 break;
             case R.id.radioButtonSignupMale:
                 gen="Male";
-              //  Toast.makeText(SignupActivity.this,gen,Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this,gen,Toast.LENGTH_SHORT).show();
                 break;
 
 
@@ -60,7 +60,7 @@ public class SignupActivity extends AppCompatActivity {
                 passwd1=pass1.getText()+"";
                 pic=photo.getText()+"";
                 mobileno=mobile.getText()+"";
-
+                //emailid.isEmpty()
                 if(emailid.matches("")){
                     Toast.makeText(SignupActivity.this,"You did not enter your email id",Toast.LENGTH_LONG).show();
                     flag=1;
@@ -123,6 +123,7 @@ public class SignupActivity extends AppCompatActivity {
                         }
                     });
                 }
+
 
             }
         });
