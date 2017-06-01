@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidFrontend</string>
+    <string name="title_activity_view_profile__nevigation">ViewProfile_Nevigation</string>
 </resources>
