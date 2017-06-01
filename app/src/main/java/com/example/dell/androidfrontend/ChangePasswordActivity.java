@@ -39,8 +39,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
         etchangepassnewpass=(EditText)findViewById(R.id.etchangepassnewpass);
         etchangepassconfirmnewpass=(EditText)findViewById(R.id.etchangepassconfirmnewpass);
 
-
-
         mClient=new AsyncHttpClient();
         mClient.get(ChangePasswordActivity.this,"https://androidbackenddemo.herokuapp.com/users/abc@gmail.com",new JsonHttpResponseHandler(){
             ProgressDialog mProgress;

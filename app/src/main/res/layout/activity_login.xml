@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:textAlignment="center"
             android:textSize="40dp"
-            android:text="Login"
+            android:text="Login Form"
             android:textColor="@color/primary_dark"
             />
     </LinearLayout>
@@ -42,7 +42,7 @@
             android:layout_height="match_parent"
             android:textAlignment="inherit"
             android:textSize="20dp"
-            android:text="Name :"
+            android:text="Email Address :"
             android:textColor="@color/primary_dark"
 
             />
@@ -50,8 +50,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:id="@+id/txtname"
+            android:id="@+id/txtloginemail"
+            android:hint="Enter Your Email Address"
             />
     </LinearLayout>
 
@@ -76,8 +76,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:id="@+id/txtpassword"
+            android:hint="Enter Your Password"
+            android:id="@+id/txtloginpassword"
+            android:inputType = "textPassword"
             />
 
 
@@ -91,7 +92,7 @@
         >
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
             android:textAlignment="center"
