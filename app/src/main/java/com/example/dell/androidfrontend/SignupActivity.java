@@ -19,7 +19,7 @@ import cz.msebera.android.httpclient.Header;
 public class SignupActivity extends AppCompatActivity {
 
     String gen,emailid,username,passwd,passwd1,mobileno,pic;
-    Button register;
+    Button register,cancel;
     int flag=0;
     EditText email,name,pass,pass1,mobile,photo;
     AsyncHttpClient mClient;
@@ -50,6 +50,19 @@ public class SignupActivity extends AppCompatActivity {
         pass1= (EditText) findViewById(R.id.txtSignupPassword1);
         photo= (EditText) findViewById(R.id.txtSignupPhoto);
         mobile= (EditText) findViewById(R.id.txtSignupMobile);
+        cancel= (Button) findViewById(R.id.btnSignupCancel);
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                email.setText("");
+                name.setText("");
+                pass.setText("");
+                pass1.setText("");
+                photo.setText("");
+                mobile.setText("");
+            }
+        });
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

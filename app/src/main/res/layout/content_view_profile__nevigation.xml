@@ -18,7 +18,7 @@
             android:id="@+id/profile_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ebca0707"
+            android:background="@color/primary_dark"
             android:elevation="4dp"
             android:paddingBottom="24dp">
             <TextView
