@@ -6,7 +6,8 @@ package com.example.dell.androidfrontend;
 
 public class GlobalVariables {
 
-    String email_id;
+
+     static String email_id = null;
 
     public GlobalVariables(String email_id) {
         this.email_id = email_id;
