@@ -36,7 +36,7 @@ public class ViewprofileActivity extends AppCompatActivity {
         tvViewProfileGender= (TextView) findViewById(R.id.lblViewProfileGender);
 
         AsyncHttpClient mClient=new AsyncHttpClient();
-        mClient.get(ViewprofileActivity.this,"https://androidbackenddemo.herokuapp.com/users/het@gmail.com",new JsonHttpResponseHandler(){
+        mClient.get(ViewprofileActivity.this,"https://androidbackenddemo.herokuapp.com/users/"+GlobalVariables.uname,new JsonHttpResponseHandler(){
 
             ProgressDialog mProgressDialog;
 

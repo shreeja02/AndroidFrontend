@@ -79,7 +79,7 @@ public class EditUserProfileActivity extends AppCompatActivity {
 
 
 
-        mclient.get(EditUserProfileActivity.this, "https://androidbackenddemo.herokuapp.com/users/abc@gmail.com", new JsonHttpResponseHandler() {
+        mclient.get(EditUserProfileActivity.this, "https://androidbackenddemo.herokuapp.com/users/"+GlobalVariables.uname, new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -158,7 +158,7 @@ public class EditUserProfileActivity extends AppCompatActivity {
                 params.add("user_photo",txtphoto.getText().toString());
                 params.add("gender",gen);
 
-                mclient.put("https://androidbackenddemo.herokuapp.com/users/abc@gmail.com",params,new JsonHttpResponseHandler() {
+                mclient.put("https://androidbackenddemo.herokuapp.com/users/"+GlobalVariables.uname,params,new JsonHttpResponseHandler() {
 
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

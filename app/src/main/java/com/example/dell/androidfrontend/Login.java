@@ -1,6 +1,7 @@
 package com.example.dell.androidfrontend;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,72 +25,17 @@ public class Login extends AppCompatActivity
 {
     Button btnlogin;
     EditText txtloginemail,txtloginpassword;
-
     AsyncHttpClient mClient;
-    ArrayList<ULogin> mArrayList;
-    String email,password;
-   // mArrayList=new ArrayList<ULogin>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        mArrayList=new ArrayList<ULogin>();
         btnlogin= (Button) findViewById(R.id.btnlogin);
         txtloginemail= (EditText) findViewById(R.id.txtloginemail);
         txtloginpassword= (EditText) findViewById(R.id.txtloginpassword);
 
-        mClient=new AsyncHttpClient();
-        mClient.get(Login.this,"https://androidbackenddemo.herokuapp.com/users/demo@gmail.com",new JsonHttpResponseHandler(){
-                ProgressDialog mProgress;
-
-                @Override
-                public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-                    super.onSuccess(statusCode, headers, response);
-                    JSONArray mJsonArray;
-                    JSONObject mJsonObject;
-                    mJsonArray=response;
-                    try {
-                        for(int i=0;i<mJsonArray.length();i++){
-
-                            mJsonObject=mJsonArray.getJSONObject(i);
-                            mArrayList.add(new ULogin(mJsonObject.getString("email_id"),mJsonObject.getString("password")));
-                            System.out.println(mJsonObject+"");
-                            System.out.println(mArrayList.get(i).password);
-
-
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    email=mArrayList.get(0).email_id;
-                    password=mArrayList.get(0).password;
-                    //Toast.makeText(Login.this,email+"", Toast.LENGTH_LONG).show();
-                   // Toast.makeText(Login.this,password+"", Toast.LENGTH_LONG).show();
-                }
-
-                @Override
-                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
-                    super.onFailure(statusCode, headers, throwable, errorResponse);
-                }
-
-                @Override
-                public void onStart() {
-                    super.onStart();
-                    mProgress=ProgressDialog.show(Login.this,"Please wait","Checking",true,false);
-                }
-
-                @Override
-                public void onFinish() {
-                    super.onFinish();
-                    if(mProgress.isShowing()){
-                        mProgress.dismiss();
-                    }
-
-                }
-            });
 
         btnlogin.setOnClickListener(
                 new View.OnClickListener() {
@@ -98,28 +44,50 @@ public class Login extends AppCompatActivity
 
                         if((txtloginemail.getText().length() != 0) && (txtloginpassword.getText().length() != 0))
                         {
-                            String emailid=txtloginemail.getText().toString();
-                            String pass=txtloginpassword.getText().toString();
-                           // Toast.makeText(Login.this,email+"", Toast.LENGTH_LONG).show();
-                           // Toast.makeText(Login.this,pass+"", Toast.LENGTH_LONG).show();
-                            if(emailid.equals(email) && pass.equals(password))
-                            {
-                                Toast.makeText(Login.this,"Match Found Successfully", Toast.LENGTH_LONG).show();
-                            }
-                            else if(emailid!=(email) && pass.equals(password))
-                            {
-                                Toast.makeText(Login.this,"Email Address Not Found", Toast.LENGTH_LONG).show();
-                            }
+                            mClient=new AsyncHttpClient();
+                            RequestParams params=new RequestParams();
+                            params.add("email_id",txtloginemail.getText()+"");
+                            params.add("password",txtloginpassword.getText()+"");
+                            mClient.post(Login.this,"https://androidbackenddemo.herokuapp.com/login",params,new JsonHttpResponseHandler(){
 
-                            else if(emailid.equals(email) && pass!=(password))
-                            {
-                                Toast.makeText(Login.this,"Incorrect Password", Toast.LENGTH_LONG).show();
-                            }
+                                ProgressDialog mProgress;
 
-                            else
-                            {
-                                Toast.makeText(Login.this,"Match Not Found", Toast.LENGTH_LONG).show();
-                            }
+                                @Override
+                                public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                                    super.onSuccess(statusCode, headers, response);
+                                    JSONArray mJsonArray=response;
+                                    if(mJsonArray.length()==1){
+                                            GlobalVariables.uname=txtloginemail.getText()+"";
+                                        Intent it=new Intent(Login.this,HomePageActivity.class);
+                                        startActivity(it);
+                                    }
+                                    else
+                                    {
+                                        Toast.makeText(Login.this,"Invalid",Toast.LENGTH_LONG).show();
+                                    }
+
+                                }
+
+                                @Override
+                                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                                    super.onFailure(statusCode, headers, throwable, errorResponse);
+                                }
+
+                                @Override
+                                public void onStart() {
+                                    super.onStart();
+                                    mProgress=ProgressDialog.show(Login.this,"Loading","Please wait",true,false);
+                                }
+
+                                @Override
+                                public void onFinish() {
+                                    super.onFinish();
+                                    if(mProgress.isShowing()){
+                                        mProgress.dismiss();
+                                    }
+                                }
+                            });
+
                         }
                         else
                         {
