@@ -15,19 +15,18 @@
         <activity android:name=".SignupActivity"></activity>
         <activity android:name=".Login">
 
-           </activity>
-        <activity android:name=".ChangePasswordActivity"></activity>
-        <activity android:name=".EditUserProfileActivity" />
-        <activity android:name=".ViewprofileActivity" />
-        <activity android:name=".HomePageActivity"></activity>
-        <activity android:name=".QuestionIdActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+           </activity>
+        <activity android:name=".ChangePasswordActivity"></activity>
+        <activity android:name=".EditUserProfileActivity" />
+        <activity android:name=".ViewprofileActivity" />
+        <activity android:name=".HomePageActivity"></activity>
+        <activity android:name=".QuestionIdActivity">
         </activity>
     </application>
 
