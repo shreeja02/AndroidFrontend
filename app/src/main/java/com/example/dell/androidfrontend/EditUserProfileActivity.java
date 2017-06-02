@@ -164,7 +164,7 @@ public class EditUserProfileActivity extends AppCompatActivity {
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         super.onSuccess(statusCode, headers, response);
                         Toast.makeText(EditUserProfileActivity.this,"Updated Successfully",Toast.LENGTH_SHORT).show();
-                        Intent it=new Intent(EditUserProfileActivity.this,ViewprofileActivity.class);
+                        Intent it=new Intent(EditUserProfileActivity.this,ViewProfile_Nevigation.class);
                         startActivity(it);
                     }
 

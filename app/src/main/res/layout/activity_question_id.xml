@@ -8,75 +8,86 @@
     tools:context="com.example.dell.androidfrontend.QuestionIdActivity">
 
     <TextView
-        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Question-Answer Review"
-        android:paddingLeft="15dp"
+        android:paddingLeft="23dp"
         android:textSize="30dp"
+        android:paddingTop="7dp"
+        android:textColor="@color/primary_dark"
 
         />
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="4dp"
             android:text="Name:"
+            android:textColor="@color/primary_text"
+            android:paddingLeft="5dp"
             android:textSize="25dp"/>
+
+         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:textColor="@color/secondary_text"
+             android:paddingLeft="5dp"
+            android:id="@+id/tvquesidactivityname" />
+
         </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-    <TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvquesidactivityname"/>
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:elevation="4dp"
             android:text="Date:"
-            android:textSize="25dp"/>
+            android:textColor="@color/primary_text"
+            android:paddingLeft="5dp"
+            android:textSize="25dp" />
 
        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+           android:paddingLeft="5dp"
+           android:textColor="@color/secondary_text"
             android:id="@+id/tvquesidactivitydate"/>
 
-
+    </LinearLayout>
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="4dp"
             android:text="Question Title:"
+            android:textColor="@color/primary_text"
+            android:paddingLeft="5dp"
             android:textSize="25dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textColor="@color/secondary_text"
             android:id="@+id/tvquesidactivitytitle"/>
 
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="4dp"
             android:text="Description:"
+            android:textColor="@color/primary_text"
+            android:paddingLeft="5dp"
             android:textSize="25dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textColor="@color/secondary_text"
             android:id="@+id/tvquesidactivitydescription"/>
 
     </LinearLayout>
 
-</LinearLayout>
+

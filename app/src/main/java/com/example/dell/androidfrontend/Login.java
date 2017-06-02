@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -25,6 +26,7 @@ public class Login extends AppCompatActivity
 {
     Button btnlogin;
     EditText txtloginemail,txtloginpassword;
+    TextView txtloginRegisterNow;
     AsyncHttpClient mClient;
 
     @Override
@@ -35,8 +37,15 @@ public class Login extends AppCompatActivity
         btnlogin= (Button) findViewById(R.id.btnlogin);
         txtloginemail= (EditText) findViewById(R.id.txtloginemail);
         txtloginpassword= (EditText) findViewById(R.id.txtloginpassword);
+        txtloginRegisterNow= (TextView) findViewById(R.id.txtLoginRegister);
 
-
+        txtloginRegisterNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent itstart=new Intent(Login.this,SignupActivity.class);
+                startActivity(itstart);
+            }
+        });
         btnlogin.setOnClickListener(
                 new View.OnClickListener() {
                     @Override

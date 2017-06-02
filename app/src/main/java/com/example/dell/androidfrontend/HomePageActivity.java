@@ -41,7 +41,7 @@ public class HomePageActivity extends AppCompatActivity {
         btnviewprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent itviewprofile=new Intent(HomePageActivity.this,ViewprofileActivity.class);
+                Intent itviewprofile=new Intent(HomePageActivity.this,ViewProfile_Nevigation.class);
                 startActivity(itviewprofile);
             }
         });
