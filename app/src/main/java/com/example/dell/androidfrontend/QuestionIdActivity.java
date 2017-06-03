@@ -3,6 +3,10 @@ package com.example.dell.androidfrontend;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.PopupMenu;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +25,31 @@ public class QuestionIdActivity extends AppCompatActivity {
 
     TextView tvquesidactivityname,tvquesidactivitydate,tvquesidactivitydescription,tvquesidactivitytitle;
     ArrayList<QuestionbyQuesId> mArrayList;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menudetailedquestionbyid,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menudetailedquesshare:
+
+                Toast.makeText(QuestionIdActivity.this,"Share Via",Toast.LENGTH_LONG).show();
+              /*  View menuItemView = findViewById(R.id.action_new);
+                PopupMenu popupMenu = new PopupMenu(this, menuItemView);
+                popupMenu.inflate(R.menu.create_post_menu);
+                popupMenu.show();*/
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +79,8 @@ public class QuestionIdActivity extends AppCompatActivity {
                         mArrayList.add(new QuestionbyQuesId(Integer.parseInt(mJSONObject.getString("question_id")),mJSONObject.getString("question_title"),mJSONObject.getString("question_desc"),Integer.parseInt(mJSONObject.getString("fk_category_id")),mJSONObject.getString("date"),mJSONObject.getString("apporve"),mJSONObject.getString("fk_email_id"),mJSONObject.getString("user_name")));
 
                     }
-                    tvquesidactivitydate.setText(mArrayList.get(0).date);
-                    tvquesidactivityname.setText(mArrayList.get(0).user_name+"");
+                    tvquesidactivitydate.setText("On:  "+mArrayList.get(0).date);
+                    tvquesidactivityname.setText("By:  "+mArrayList.get(0).user_name+"");
                     tvquesidactivitydescription.setText(mArrayList.get(0).question_desc+"");
                     tvquesidactivitytitle.setText(mArrayList.get(0).question_title+"");
 
