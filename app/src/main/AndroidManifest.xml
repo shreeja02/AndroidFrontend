@@ -48,6 +48,14 @@
                 android:value="com.example.dell.androidfrontend.HomePageActivity" />
         </activity>
         <activity android:name=".testing"></activity>
+        <activity
+            android:name=".answerbyqus"
+            android:label="@string/title_activity_answerbyqus"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.androidfrontend.HomePageActivity" />
+        </activity>
     </application>
 
 </manifest>
