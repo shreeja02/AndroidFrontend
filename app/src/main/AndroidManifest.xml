@@ -13,8 +13,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity
-            android:label="Detailed Information"
-            android:name=".QuestionIdActivity" >
+            android:name=".QuestionIdActivity"
+            android:label="Detailed Information">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,21 +26,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dell.androidfrontend.SignupActivity" />
         </activity>
-        <activity android:name=".Login">
-
-        </activity>
-        <activity android:name=".ChangePasswordActivity"></activity>
+        <activity android:name=".Login"></activity>
+        <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".EditUserProfileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dell.androidfrontend.ViewProfile_Nevigation" />
         </activity>
-        <activity android:name=".ViewprofileActivity" >
+        <activity android:name=".ViewprofileActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dell.androidfrontend.HomePageActivity" />
         </activity>
-        <activity android:name=".HomePageActivity"></activity>
+        <activity android:name=".HomePageActivity" />
         <activity
             android:name=".ViewProfile_Nevigation"
             android:label="@string/title_activity_view_profile__nevigation"
@@ -49,6 +47,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dell.androidfrontend.HomePageActivity" />
         </activity>
+        <activity android:name=".testing"></activity>
     </application>
 
 </manifest>
