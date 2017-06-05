@@ -8,12 +8,17 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/askville"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".SignupActivity"></activity>
-        <activity android:name=".Login">
+
+
+        <activity
+            android:label="Detailed Information"
+            android:name=".QuestionIdActivity" >
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,15 +26,43 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".ChangePasswordActivity"></activity>
-        <activity android:name=".EditUserProfileActivity" />
-        <activity android:name=".ViewprofileActivity" />
-        <activity android:name=".HomePageActivity"></activity>
+
         <activity android:name=".AddQuestionActivity">
 
 
 
         </activity>
+
+
+        <activity android:name=".SignupActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.androidfrontend.SignupActivity" />
+        </activity>
+        <activity android:name=".Login">
+
+        </activity>
+        <activity android:name=".ChangePasswordActivity"></activity>
+        <activity android:name=".EditUserProfileActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.androidfrontend.ViewProfile_Nevigation" />
+        </activity>
+        <activity android:name=".ViewprofileActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.androidfrontend.HomePageActivity" />
+        </activity>
+        <activity android:name=".HomePageActivity"></activity>
+        <activity
+            android:name=".ViewProfile_Nevigation"
+            android:label="@string/title_activity_view_profile__nevigation"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.androidfrontend.HomePageActivity" />
+        </activity>
+
     </application>
 
 </manifest>

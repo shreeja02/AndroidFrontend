@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dell.androidfrontend.QuestionIdActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/primary_text"
+            android:id="@+id/tvquesidactivitytitle"/>
+
+         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:textColor="@color/colorPrimary"
+             android:paddingLeft="245dp"
+            android:id="@+id/tvquesidactivityname" />
+
+         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:paddingLeft="245dp"
+             android:textColor="@color/colorPrimary"
+            android:id="@+id/tvquesidactivitydate"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textColor="@color/accent"
+            android:id="@+id/tvquesidactivitydescription"/>
+
+        <Button
+            android:id="@+id/bSearch"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="Answer"
+            android:background="@color/divider"
+            android:layout_marginLeft="240dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorPrimary"
+            android:drawableLeft="@android:drawable/ic_input_add"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
