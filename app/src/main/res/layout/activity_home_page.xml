@@ -6,42 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.dell.androidfrontend.HomePageActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:id="@+id/lstallquestiondisplay">
 
-        <Button
-            android:id="@+id/btnhomepagesignup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Signup" />
-
-
-        <Button
-            android:id="@+id/btnhomepagelogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login" />
-
-        <Button
-            android:id="@+id/btnhomepageviewprofile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View Profile" />
-
-        <Button
-            android:id="@+id/btnhomepageeditprofile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Profile" />
-
-        <Button
-            android:id="@+id/btnhomepagechangepassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change Password" />
-
-    </LinearLayout>
+    </ListView>
 
 </LinearLayout>
