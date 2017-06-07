@@ -1,60 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.dell.androidfrontend.QuestionIdActivity">
+    android:background="@color/divider"
+    android:padding="10dp"
+    tools:context="com.example.dell.androidfrontend.QuestionIdActivity"
+    android:weightSum="1">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="@color/icons"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="circle"
+            android:src="@mipmap/ic_launcher"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/primary_text"
+                android:id="@+id/tvquesidactivityname" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="@color/divider"
+                android:id="@+id/tvquesidactivitydate"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/icons"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        >
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingLeft="5dp"
+            android:padding="10dp"
+            android:textSize="18dp"
             android:textColor="@color/primary_text"
             android:id="@+id/tvquesidactivitytitle"/>
 
-         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-             android:textColor="@color/colorPrimary"
-             android:paddingLeft="245dp"
-            android:id="@+id/tvquesidactivityname" />
-
-         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-           android:paddingLeft="245dp"
-             android:textColor="@color/colorPrimary"
-            android:id="@+id/tvquesidactivitydate"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
+            android:padding="13dp"
             android:textColor="@color/accent"
             android:id="@+id/tvquesidactivitydescription"/>
 
-        <Button
-            android:id="@+id/bSearch"
-            android:layout_width="130dp"
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/icons"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.01">
+        <EditText
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Answer"
-            android:background="@color/divider"
-            android:layout_marginLeft="240dp"
-            android:paddingLeft="10dp"
-            android:textColor="@color/colorPrimary"
-            android:drawableLeft="@android:drawable/ic_input_add"
-            android:textSize="14sp" />
+            android:layout_weight="1"
+            android:hint="Post Your Answer"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/bSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_send"/>
+
 
     </LinearLayout>
 
 
-</ScrollView>
+</LinearLayout>
