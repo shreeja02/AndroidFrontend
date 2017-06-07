@@ -79,8 +79,8 @@ public class QuestionIdActivity extends AppCompatActivity {
                         mArrayList.add(new QuestionbyQuesId(Integer.parseInt(mJSONObject.getString("question_id")),mJSONObject.getString("question_title"),mJSONObject.getString("question_desc"),Integer.parseInt(mJSONObject.getString("fk_category_id")),mJSONObject.getString("date"),mJSONObject.getString("apporve"),mJSONObject.getString("fk_email_id"),mJSONObject.getString("user_name")));
 
                     }
-                    tvquesidactivitydate.setText("On:  "+mArrayList.get(0).date);
-                    tvquesidactivityname.setText("By:  "+mArrayList.get(0).user_name+"");
+                    tvquesidactivitydate.setText("  "+mArrayList.get(0).date);
+                    tvquesidactivityname.setText("  "+mArrayList.get(0).user_name+"");
                     tvquesidactivitydescription.setText(mArrayList.get(0).question_desc+"");
                     tvquesidactivitytitle.setText(mArrayList.get(0).question_title+"");
 

@@ -114,7 +114,6 @@ public class SignupActivity extends AppCompatActivity {
                 if (flag == 0) {
 
                     mClient = new AsyncHttpClient();
-
                     params = new RequestParams();
                     params.put("email_id", emailid);
                     params.put("user_name", username);
